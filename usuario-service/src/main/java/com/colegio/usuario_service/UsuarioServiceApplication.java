@@ -1,13 +1,13 @@
-package com.shopsmart.inventory_service;
+package com.colegio.usuario_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InventoryServiceApplication {
+public class UsuarioServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventoryServiceApplication.class, args);
+		SpringApplication.run(UsuarioServiceApplication.class, args);
 	}
 
 }
