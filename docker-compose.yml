@@ -1,0 +1,50 @@
+services:
+  # Servicio de Base de Datos
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "3306:3306"
+    networks:
+      - microservices-net
+
+  # Service Discovery (Eureka)
+  eureka-server:
+    build: ./eureka-server
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-net
+
+  # Microservicio Académico
+  academico-service:
+    build: ./academico-service
+    container_name: academico-service
+    ports:
+      - "8091:8091"
+    depends_on:
+      - mysql-db
+      - eureka-server
+    networks:
+      - microservices-net
+    restart: always
+
+  # Microservicio Usuario
+  usuario-service:
+    build: ./usuario-service
+    container_name: usuario-service
+    ports:
+      - "8092:8092"
+    depends_on:
+      - mysql-db
+      - eureka-server
+    networks:
+      - microservices-net
+    restart: always
+
+networks:
+  microservices-net:
+    driver: bridge
