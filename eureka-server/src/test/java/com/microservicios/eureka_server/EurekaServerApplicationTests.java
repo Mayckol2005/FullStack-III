@@ -1,10 +1,10 @@
-package com.colegio.usuario_service;
+package com.microservicios.eureka_server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UsuarioServiceApplicationTests {
+class EurekaServerApplicationTests {
 
 	@Test
 	void contextLoads() {
