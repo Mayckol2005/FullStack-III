@@ -1,5 +1,7 @@
+version: '3.8'
+
 services:
-  # Servicio de Base de Datos
+
   mysql-db:
     image: mysql:8.0
     container_name: mysql-db
@@ -10,7 +12,6 @@ services:
     networks:
       - microservices-net
 
-  # Service Discovery (Eureka)
   eureka-server:
     build: ./eureka-server
     container_name: eureka-server
@@ -19,7 +20,6 @@ services:
     networks:
       - microservices-net
 
-  # Microservicio Académico
   academico-service:
     build: ./academico-service
     container_name: academico-service
@@ -32,12 +32,23 @@ services:
       - microservices-net
     restart: always
 
-  # Microservicio Usuario
   usuario-service:
     build: ./usuario-service
     container_name: usuario-service
     ports:
       - "8092:8092"
+    depends_on:
+      - mysql-db
+      - eureka-server
+    networks:
+      - microservices-net
+    restart: always
+
+  comunicacion-service:
+    build: ./comunicacion-service
+    container_name: comunicacion-service
+    ports:
+      - "8093:8093"
     depends_on:
       - mysql-db
       - eureka-server

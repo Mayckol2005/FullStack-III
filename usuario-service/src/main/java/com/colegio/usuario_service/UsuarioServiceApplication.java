@@ -5,11 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableDiscoveryClient // Esto permite que el Eureka Server lo detecte
+@EnableDiscoveryClient
 public class UsuarioServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UsuarioServiceApplication.class, args);
 	}
-
 }
