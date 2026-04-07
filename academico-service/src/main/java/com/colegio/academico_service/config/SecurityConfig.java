@@ -1,4 +1,4 @@
-package com.colegio.usuario_service.config;
+package com.colegio.academico_service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
