@@ -8,9 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/academico-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comunicacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/AcademicoServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/AcademicoServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.academico-service [clean].executor": "Run",
+    "Maven.academico-service [package].executor": "Run",
     "Maven.comunicacion-service [clean].executor": "Run",
     "Maven.comunicacion-service [package].executor": "Run",
     "Maven.usuario-service [clean].executor": "Run",
@@ -69,10 +70,18 @@
     "git-widget-placeholder": "docker",
     "kotlin-language-version-configured": "true",
     "node.js.selected.package.tslint": "(autodetect)",
+    "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.UsuarioServiceApplication">
+    <configuration name="AcademicoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="academico-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.academico_service.AcademicoServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ComunicacionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="comunicacion-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.comunicacion_service.ComunicacionServiceApplication" />
