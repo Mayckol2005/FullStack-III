@@ -1,28 +1,42 @@
 package com.colegio.comunicacion_service.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "avisos")
+@Schema(description = "Entidad que representa un aviso o comunicado institucional")
 public class Aviso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "ID autogenerado del aviso", example = "1")
     private Long id;
 
     @Column(nullable = false)
+    @NotBlank(message = "El título del aviso es obligatorio")
+    @Size(max = 100, message = "El título no puede exceder los 100 caracteres")
+    @Schema(description = "Título principal del comunicado", example = "Suspensión de clases")
     private String titulo;
 
     @Column(nullable = false, length = 1000)
+    @NotBlank(message = "El contenido del aviso es obligatorio")
+    @Schema(description = "Cuerpo detallado del mensaje", example = "Mañana no hay clases por lluvia extrema.")
     private String contenido;
 
     @Column(nullable = false)
+    @NotBlank(message = "El remitente es obligatorio (ej. Dirección, Profesor Jefe)")
+    @Schema(description = "Quién emite el comunicado", example = "Dirección Académica")
     private String remitente;
 
+    @Schema(description = "Fecha y hora en la que se generó el comunicado automáticamente")
     private LocalDateTime fechaPublicacion;
 
-    // Constructor vacío
+    // Constructor
     public Aviso() {
         this.fechaPublicacion = LocalDateTime.now();
     }

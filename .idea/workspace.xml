@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/entity/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/entity/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/entity/Curso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/entity/Aviso.java" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/entity/Aviso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +70,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.AcademicoServiceApplication.executor": "Run",
+    "Spring Boot.ComunicacionServiceApplication.executor": "Run",
     "Spring Boot.UsuarioServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "francisco-vera",
@@ -75,7 +81,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.UsuarioServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ComunicacionServiceApplication">
     <configuration name="AcademicoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="academico-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.academico_service.AcademicoServiceApplication" />
