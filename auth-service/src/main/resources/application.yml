@@ -1,0 +1,18 @@
+server:
+  port: 8094 # Puerto único para Auth
+
+spring:
+  application:
+    name: auth-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+# Configuración personalizada para nuestros Tokens
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970 # Llave criptográfica secreta
+  expiration: 3600000 # El token durará 1 hora (en milisegundos)
