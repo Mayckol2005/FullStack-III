@@ -35,6 +35,12 @@ spring:
           predicates:
             - Path=/api/comunicaciones/**
 
+        # Ruta para Estudiantes
+        - id: estudiante-service
+          uri: lb://ESTUDIANTE-SERVICE
+          predicates:
+            - Path=/api/estudiantes/**
+
 eureka:
   client:
     service-url:

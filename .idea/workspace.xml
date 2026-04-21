@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="97" />
+    <option name="cachedIndexableFilesCount" value="120" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -76,13 +76,14 @@
     "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.ComunicacionServiceApplication.executor": "Run",
+    "Spring Boot.EstudianteServiceApplication.executor": "Run",
     "Spring Boot.UsuarioServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "francisco-vera",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III/auth-service/src/main/java/com/colegio/auth_service",
+    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III/estudiante-service/src/main/java/com/colegio/estudiante_service",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -94,10 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fvera\Desktop\FullStack-III\estudiante-service\src\main\java\com\colegio\estudiante_service" />
       <recent name="C:\Users\fvera\Desktop\FullStack-III\auth-service\src\main\java\com\colegio\auth_service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="AcademicoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="academico-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.academico_service.AcademicoServiceApplication" />
@@ -122,6 +124,13 @@
     <configuration name="ComunicacionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="comunicacion-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.comunicacion_service.ComunicacionServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EstudianteServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="estudiante-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.estudiante_service.EstudianteServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,7 +162,8 @@
       <workItem from="1776735677737" duration="21000" />
       <workItem from="1776736124550" duration="1332000" />
       <workItem from="1776780782188" duration="295000" />
-      <workItem from="1776781141220" duration="1178000" />
+      <workItem from="1776781141220" duration="2196000" />
+      <workItem from="1776783375526" duration="1919000" />
     </task>
     <servers />
   </component>
