@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/entity/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/entity/Curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comunicacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/entity/Aviso.java" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/entity/Aviso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="89" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,28 +60,46 @@
     "Maven.usuario-service [clean].executor": "Run",
     "Maven.usuario-service [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.AcademicoServiceApplication.executor": "Run",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
     "Spring Boot.ComunicacionServiceApplication.executor": "Run",
     "Spring Boot.UsuarioServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "francisco-vera",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.ComunicacionServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="AcademicoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="academico-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.academico_service.AcademicoServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.api_gateway.ApiGatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,6 +119,14 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="" />
@@ -112,6 +135,8 @@
       <option name="presentableId" value="Default" />
       <updated>1775250661712</updated>
       <workItem from="1775250665130" duration="138000" />
+      <workItem from="1776735677737" duration="21000" />
+      <workItem from="1776736124550" duration="850000" />
     </task>
     <servers />
   </component>
