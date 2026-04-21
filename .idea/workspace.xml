@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/AcademicoServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/AcademicoServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/entity/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +68,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.UsuarioServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "docker",
+    "git-widget-placeholder": "francisco-vera",
     "kotlin-language-version-configured": "true",
     "node.js.selected.package.tslint": "(autodetect)",
     "run.configurations.included.in.services": "true",
