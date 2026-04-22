@@ -1,21 +1,5 @@
-server:
-    port: 8096
-
 spring:
     application:
         name: asistencia-service
-    datasource:
-        url: jdbc:mysql://${DB_HOST:localhost}:3306/colegio_db?createDatabaseIfNotExist=true
-        username: root
-        password: "" 
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: true
-
-eureka:
-    client:
-        service-url:
-            defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka
-    instance:
-        prefer-ip-address: true
+    config:
+        import: "optional:configserver:http://localhost:8888"

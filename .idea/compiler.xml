@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="usuario-service" />
+        <module name="config-server" />
+        <module name="auth-service" />
+        <module name="asistencia-service" />
         <module name="api-gateway" />
         <module name="academico-service" />
-        <module name="auth-service" />
         <module name="estudiante-service" />
         <module name="comunicacion-service" />
       </profile>
@@ -19,8 +21,10 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="academico-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="asistencia-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="comunicacion-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="estudiante-service" options="-parameters" />
       <module name="usuario-service" options="-parameters" />
     </option>

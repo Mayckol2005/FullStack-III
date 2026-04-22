@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/academico-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asistencia-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/asistencia-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asistencia-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/asistencia-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="120" />
+    <option name="cachedIndexableFilesCount" value="140" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -29,12 +39,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -55,10 +72,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.academico-service [clean].executor": "Run",
+    "Maven.academico-service [install].executor": "Run",
     "Maven.academico-service [package].executor": "Run",
     "Maven.comunicacion-service [clean].executor": "Run",
+    "Maven.comunicacion-service [install].executor": "Run",
     "Maven.comunicacion-service [package].executor": "Run",
     "Maven.usuario-service [clean].executor": "Run",
+    "Maven.usuario-service [install].executor": "Run",
     "Maven.usuario-service [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
@@ -74,32 +94,62 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.AcademicoServiceApplication.executor": "Run",
     "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.AsistenciaServiceApplication.executor": "Run",
     "Spring Boot.AuthServiceApplication.executor": "Run",
     "Spring Boot.ComunicacionServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.EstudianteServiceApplication.executor": "Run",
     "Spring Boot.UsuarioServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "francisco-vera",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III/estudiante-service/src/main/java/com/colegio/estudiante_service",
+    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III/asistencia-service/src/main/java/com/colegio/asistencia_service",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fvera\Desktop\FullStack-III\asistencia-service\src\main\java\com\colegio\asistencia_service" />
       <recent name="C:\Users\fvera\Desktop\FullStack-III\estudiante-service\src\main\java\com\colegio\estudiante_service" />
       <recent name="C:\Users\fvera\Desktop\FullStack-III\auth-service\src\main\java\com\colegio\auth_service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="AcademicoServiceApplication" value="FAILED" />
+              <entry key="ApiGatewayApplication" value="FAILED" />
+              <entry key="AsistenciaServiceApplication" value="STOPPED" />
+              <entry key="AuthServiceApplication" value="STOPPED" />
+              <entry key="ComunicacionServiceApplication" value="FAILED" />
+              <entry key="ConfigServerApplication" value="STOPPED" />
+              <entry key="EstudianteServiceApplication" value="STOPPED" />
+              <entry key="UsuarioServiceApplication" value="FAILED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration name="AcademicoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="academico-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.academico_service.AcademicoServiceApplication" />
@@ -114,6 +164,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AsistenciaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="asistencia-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.asistencia_service.AsistenciaServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.auth_service.AuthServiceApplication" />
@@ -124,6 +181,13 @@
     <configuration name="ComunicacionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="comunicacion-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.comunicacion_service.ComunicacionServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.colegio.config_server.ConfigServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,11 +227,17 @@
       <workItem from="1776736124550" duration="1332000" />
       <workItem from="1776780782188" duration="295000" />
       <workItem from="1776781141220" duration="2196000" />
-      <workItem from="1776783375526" duration="1919000" />
+      <workItem from="1776783375526" duration="4049000" />
+      <workItem from="1776820507690" duration="2406000" />
+      <workItem from="1776823130112" duration="6488000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

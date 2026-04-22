@@ -1,0 +1,40 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/api/auth/**
+        - id: usuario-service
+          uri: lb://USUARIO-SERVICE
+          predicates:
+            - Path=/api/usuarios/**
+        - id: academico-service
+          uri: lb://ACADEMICO-SERVICE
+          predicates:
+            - Path=/api/academico/**
+        - id: comunicacion-service
+          uri: lb://COMUNICACION-SERVICE
+          predicates:
+            - Path=/api/comunicaciones/**
+        - id: estudiante-service
+          uri: lb://ESTUDIANTE-SERVICE
+          predicates:
+            - Path=/api/estudiantes/**
+        - id: asistencia-service
+          uri: lb://ASISTENCIA-SERVICE
+          predicates:
+            - Path=/api/asistencia/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
