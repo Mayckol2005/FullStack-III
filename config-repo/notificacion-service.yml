@@ -1,0 +1,22 @@
+server:
+  port: 8097
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: tu-correo@gmail.com
+    password: tu-password-de-aplicacion
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

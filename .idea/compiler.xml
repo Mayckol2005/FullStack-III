@@ -10,22 +10,30 @@
         <module name="config-server" />
         <module name="auth-service" />
         <module name="asistencia-service" />
+        <module name="notificacion-service" />
+        <module name="anotacion-service" />
         <module name="api-gateway" />
         <module name="academico-service" />
         <module name="estudiante-service" />
+        <module name="evaluacion-service" />
         <module name="comunicacion-service" />
+        <module name="reporte-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="academico-service" options="-parameters" />
+      <module name="anotacion-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="asistencia-service" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="comunicacion-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="estudiante-service" options="-parameters" />
+      <module name="evaluacion-service" options="-parameters" />
+      <module name="notificacion-service" options="-parameters" />
+      <module name="reporte-service" options="-parameters" />
       <module name="usuario-service" options="-parameters" />
     </option>
   </component>

@@ -1,5 +1,5 @@
 spring:
   application:
-    name: auth-service
+    name: reporte-service
   config:
     import: "optional:configserver:http://localhost:8888"
