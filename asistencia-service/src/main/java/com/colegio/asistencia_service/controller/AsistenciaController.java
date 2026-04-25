@@ -1,7 +1,7 @@
 package com.colegio.asistencia_service.controller;
 
 import com.colegio.asistencia_service.entity.Asistencia;
-import com.colegio.asistencia_service.repository.AsistenciaRepository;
+import com.colegio.asistencia_service.service.AsistenciaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,24 +15,15 @@ import java.util.List;
 public class AsistenciaController {
 
     @Autowired
-    private AsistenciaRepository repository;
+    private AsistenciaService asistenciaService;
 
-    // Registrar asistencia
-    @PostMapping
-    public ResponseEntity<Asistencia> registrarAsistencia(@Valid @RequestBody Asistencia asistencia) {
-        Asistencia nuevaAsistencia = repository.save(asistencia);
-        return new ResponseEntity<>(nuevaAsistencia, HttpStatus.CREATED);
-    }
-
-    // Ver historial de un estudiante
-    @GetMapping("/estudiante/{estudianteId}")
-    public ResponseEntity<List<Asistencia>> obtenerPorEstudiante(@PathVariable Long estudianteId) {
-        return ResponseEntity.ok(repository.findByEstudianteId(estudianteId));
-    }
-
-    // Listado general de asistencia
     @GetMapping
-    public ResponseEntity<List<Asistencia>> listarTodo() {
-        return ResponseEntity.ok(repository.findAll());
+    public ResponseEntity<List<Asistencia>> listarTodas() {
+        return ResponseEntity.ok(asistenciaService.listarTodas());
+    }
+
+    @PostMapping
+    public ResponseEntity<Asistencia> guardar(@Valid @RequestBody Asistencia asistencia) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(asistenciaService.guardar(asistencia));
     }
 }

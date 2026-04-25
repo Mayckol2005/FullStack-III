@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anotacion-service/src/main/java/com/colegio/anotacion_service/controller/AnotacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/anotacion-service/src/main/java/com/colegio/anotacion_service/controller/AnotacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asistencia-service/src/main/java/com/colegio/asistencia_service/controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/asistencia-service/src/main/java/com/colegio/asistencia_service/controller/AsistenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/asistencia-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/asistencia-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/evaluacion-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/evaluacion-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notificacion-service/src/main/java/com/colegio/notificacion_service/controller/NotificacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notificacion-service/src/main/java/com/colegio/notificacion_service/controller/NotificacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/controller/ReporteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/controller/ReporteController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,15 +20,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="145" />
+    <option name="cachedIndexableFilesCount" value="205" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -106,7 +108,7 @@
     "git-widget-placeholder": "francisco-vera",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III/asistencia-service/src/main/java/com/colegio/asistencia_service",
+    "last_opened_file_path": "C:/Users/fvera/Desktop/FullStack-III/notificacion-service/src/main/java/com/colegio/notificacion_service",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -119,7 +121,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fvera\Desktop\FullStack-III\notificacion-service\src\main\java\com\colegio\notificacion_service" />
       <recent name="C:\Users\fvera\Desktop\FullStack-III\asistencia-service\src\main\java\com\colegio\asistencia_service" />
+      <recent name="C:\Users\fvera\Desktop\FullStack-III\anotacion-service\src\main\java\com\colegio\anotacion_service" />
       <recent name="C:\Users\fvera\Desktop\FullStack-III\estudiante-service\src\main\java\com\colegio\estudiante_service" />
       <recent name="C:\Users\fvera\Desktop\FullStack-III\auth-service\src\main\java\com\colegio\auth_service" />
     </key>
@@ -136,13 +140,16 @@
           <value>
             <map>
               <entry key="AcademicoServiceApplication" value="STOPPED" />
+              <entry key="AnotacionServiceApplication" value="STOPPED" />
               <entry key="ApiGatewayApplication" value="STOPPED" />
-              <entry key="AsistenciaServiceApplication" value="STOPPED" />
+              <entry key="AsistenciaServiceApplication" value="FAILED" />
               <entry key="AuthServiceApplication" value="STOPPED" />
               <entry key="ComunicacionServiceApplication" value="STOPPED" />
               <entry key="ConfigServerApplication" value="STOPPED" />
               <entry key="EstudianteServiceApplication" value="STOPPED" />
-              <entry key="EvaluacionServiceApplication" value="STOPPED" />
+              <entry key="EvaluacionServiceApplication" value="FAILED" />
+              <entry key="NotificacionServiceApplication" value="STOPPED" />
+              <entry key="ReporteServiceApplication" value="STOPPED" />
               <entry key="UsuarioServiceApplication" value="STOPPED" />
             </map>
           </value>
@@ -261,7 +268,8 @@
       <workItem from="1776823130112" duration="7308000" />
       <workItem from="1776877625916" duration="3633000" />
       <workItem from="1777008789676" duration="299000" />
-      <workItem from="1777073093369" duration="4875000" />
+      <workItem from="1777073093369" duration="5084000" />
+      <workItem from="1777101434888" duration="1731000" />
     </task>
     <servers />
   </component>

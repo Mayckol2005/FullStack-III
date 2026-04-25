@@ -1,8 +1,11 @@
 package com.colegio.anotacion_service.controller;
 
 import com.colegio.anotacion_service.entity.Anotacion;
-import com.colegio.anotacion_service.repository.AnotacionRepository;
+import com.colegio.anotacion_service.service.AnotacionService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,20 +15,21 @@ import java.util.List;
 public class AnotacionController {
 
     @Autowired
-    private AnotacionRepository anotacionRepository;
+    private AnotacionService anotacionService;
 
     @GetMapping
-    public List<Anotacion> listarTodas() {
-        return anotacionRepository.findAll();
+    public ResponseEntity<List<Anotacion>> listarTodas() {
+        return ResponseEntity.ok(anotacionService.listarTodas());
     }
 
     @GetMapping("/estudiante/{id}")
-    public List<Anotacion> listarPorEstudiante(@PathVariable Long id) {
-        return anotacionRepository.findByEstudianteId(id);
+    public ResponseEntity<List<Anotacion>> listarPorEstudiante(@PathVariable Long id) {
+        return ResponseEntity.ok(anotacionService.listarPorEstudiante(id));
     }
 
     @PostMapping
-    public Anotacion guardar(@RequestBody Anotacion anotacion) {
-        return anotacionRepository.save(anotacion);
+    public ResponseEntity<Anotacion> guardar(@Valid @RequestBody Anotacion anotacion) {
+        Anotacion nuevaAnotacion = anotacionService.guardar(anotacion);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevaAnotacion);
     }
 }
