@@ -2,6 +2,8 @@ package com.colegio.estudiante_service.controller;
 
 import com.colegio.estudiante_service.entity.Estudiante;
 import com.colegio.estudiante_service.service.EstudianteService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,25 +15,26 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/estudiantes")
+@Tag(name = "Gestión de Estudiantes", description = "Endpoints para la matrícula y consulta de alumnos")
 public class EstudianteController {
 
     @Autowired
     private EstudianteService estudianteService;
 
-    // POST: /api/estudiantes (Matricular nuevo estudiante)
+    @Operation(summary = "Matricular estudiante", description = "Registra un nuevo alumno en la base de datos del colegio")
     @PostMapping
     public ResponseEntity<Estudiante> matricularEstudiante(@Valid @RequestBody Estudiante estudiante) {
         Estudiante nuevoEstudiante = estudianteService.registrarEstudiante(estudiante);
         return new ResponseEntity<>(nuevoEstudiante, HttpStatus.CREATED);
     }
 
-    // GET: /api/estudiantes (Listar todos)
+    @Operation(summary = "Listar todos", description = "Devuelve una lista completa de los estudiantes matriculados")
     @GetMapping
     public ResponseEntity<List<Estudiante>> listarEstudiantes() {
         return ResponseEntity.ok(estudianteService.obtenerTodos());
     }
 
-    // GET: /api/estudiantes/{id} (Buscar uno específico)
+    @Operation(summary = "Obtener estudiante por ID", description = "Busca los datos de un alumno mediante su identificador único")
     @GetMapping("/{id}")
     public ResponseEntity<Estudiante> obtenerEstudiante(@PathVariable Long id) {
         Optional<Estudiante> estudiante = estudianteService.obtenerPorId(id);
@@ -39,9 +42,10 @@ public class EstudianteController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // GET: /api/estudiantes/curso/{cursoId} (Para cuando el profe pase asistencia)
+    @Operation(summary = "Listar estudiantes por curso", description = "Devuelve la nómina de alumnos que pertenecen a un curso específico")
     @GetMapping("/curso/{cursoId}")
     public ResponseEntity<List<Estudiante>> listarPorCurso(@PathVariable Long cursoId) {
+        // CORREGIDO: Se llama a obtenerPorCurso() tal cual lo tienes en tu Service
         return ResponseEntity.ok(estudianteService.obtenerPorCurso(cursoId));
     }
 }

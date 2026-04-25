@@ -1,20 +1,18 @@
 package com.colegio.reporte_service.service;
 
+import com.colegio.reporte_service.dto.ReporteGeneralDto;
 import org.springframework.stereotype.Service;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class ReporteService {
 
-    public Map<String, Object> obtenerReporteGeneral() {
-        Map<String, Object> reporte = new HashMap<>();
-
-        reporte.put("totalEstudiantes", 450);
-        reporte.put("promedioGeneralColegio", 5.8);
-        reporte.put("asistenciaPromedio", "92%");
-        reporte.put("estado", "Arquitectura refactorizada y lista para OpenFeign 🚀");
-
-        return reporte;
+    public ReporteGeneralDto obtenerReporteGeneral() {
+        // En el próximo paso conectaremos OpenFeign aquí
+        return new ReporteGeneralDto(
+                450,
+                5.8,
+                "92%",
+                "Arquitectura refactorizada y lista para OpenFeign 🚀"
+        );
     }
 }

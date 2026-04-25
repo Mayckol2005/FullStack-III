@@ -6,13 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/AsignaturaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/AsignaturaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/academico-service/src/main/java/com/colegio/academico_service/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anotacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/anotacion-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anotacion-service/src/main/java/com/colegio/anotacion_service/controller/AnotacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/anotacion-service/src/main/java/com/colegio/anotacion_service/controller/AnotacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anotacion-service/src/main/java/com/colegio/anotacion_service/entity/Anotacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/anotacion-service/src/main/java/com/colegio/anotacion_service/entity/Anotacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asistencia-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/asistencia-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asistencia-service/src/main/java/com/colegio/asistencia_service/controller/AsistenciaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/asistencia-service/src/main/java/com/colegio/asistencia_service/controller/AsistenciaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asistencia-service/src/main/java/com/colegio/asistencia_service/entity/Asistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/asistencia-service/src/main/java/com/colegio/asistencia_service/entity/Asistencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/dto/AuthUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/dto/AuthUserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/dto/TokenDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/dto/TokenDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/comunicacion-service/src/main/java/com/colegio/comunicacion_service/controller/AvisoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/asistencia-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/asistencia-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/evaluacion-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/evaluacion-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estudiante-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/estudiante-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estudiante-service/src/main/java/com/colegio/estudiante_service/controller/EstudianteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/estudiante-service/src/main/java/com/colegio/estudiante_service/controller/EstudianteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/estudiante-service/src/main/java/com/colegio/estudiante_service/entity/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/estudiante-service/src/main/java/com/colegio/estudiante_service/entity/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/colegio/evaluacion_service/controller/EvaluacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/colegio/evaluacion_service/controller/EvaluacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/colegio/evaluacion_service/entity/Evaluacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/evaluacion-service/src/main/java/com/colegio/evaluacion_service/entity/Evaluacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notificacion-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notificacion-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notificacion-service/src/main/java/com/colegio/notificacion_service/controller/NotificacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notificacion-service/src/main/java/com/colegio/notificacion_service/controller/NotificacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notificacion-service/src/main/java/com/colegio/notificacion_service/dto/MensajeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/notificacion-service/src/main/java/com/colegio/notificacion_service/dto/MensajeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/controller/ReporteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/controller/ReporteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/service/ReporteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/service/ReporteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,12 +161,12 @@
               <entry key="AcademicoServiceApplication" value="STOPPED" />
               <entry key="AnotacionServiceApplication" value="STOPPED" />
               <entry key="ApiGatewayApplication" value="STOPPED" />
-              <entry key="AsistenciaServiceApplication" value="FAILED" />
+              <entry key="AsistenciaServiceApplication" value="STOPPED" />
               <entry key="AuthServiceApplication" value="STOPPED" />
               <entry key="ComunicacionServiceApplication" value="STOPPED" />
               <entry key="ConfigServerApplication" value="STOPPED" />
               <entry key="EstudianteServiceApplication" value="STOPPED" />
-              <entry key="EvaluacionServiceApplication" value="FAILED" />
+              <entry key="EvaluacionServiceApplication" value="STOPPED" />
               <entry key="NotificacionServiceApplication" value="STOPPED" />
               <entry key="ReporteServiceApplication" value="STOPPED" />
               <entry key="UsuarioServiceApplication" value="STOPPED" />
@@ -269,7 +288,7 @@
       <workItem from="1776877625916" duration="3633000" />
       <workItem from="1777008789676" duration="299000" />
       <workItem from="1777073093369" duration="5084000" />
-      <workItem from="1777101434888" duration="1731000" />
+      <workItem from="1777101434888" duration="5663000" />
     </task>
     <servers />
   </component>
