@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/ReporteServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/ReporteServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/service/ReporteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/service/ReporteService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +15,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="205" />
+    <option name="cachedIndexableFilesCount" value="216" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -264,7 +264,10 @@
       <workItem from="1776877625916" duration="3633000" />
       <workItem from="1777008789676" duration="299000" />
       <workItem from="1777073093369" duration="5084000" />
-      <workItem from="1777101434888" duration="6385000" />
+      <workItem from="1777101434888" duration="6758000" />
+      <workItem from="1777109306659" duration="3000" />
+      <workItem from="1777109502379" duration="16000" />
+      <workItem from="1777387183658" duration="2274000" />
     </task>
     <servers />
   </component>
