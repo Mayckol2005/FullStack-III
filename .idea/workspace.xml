@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="57067d58-f215-4689-bbad-2dd5f25f9c76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/service/ReporteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reporte-service/src/main/java/com/colegio/reporte_service/service/ReporteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +15,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="216" />
+    <option name="cachedIndexableFilesCount" value="218" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -267,7 +267,8 @@
       <workItem from="1777101434888" duration="6758000" />
       <workItem from="1777109306659" duration="3000" />
       <workItem from="1777109502379" duration="16000" />
-      <workItem from="1777387183658" duration="2274000" />
+      <workItem from="1777387183658" duration="6355000" />
+      <workItem from="1777591991152" duration="991000" />
     </task>
     <servers />
   </component>
