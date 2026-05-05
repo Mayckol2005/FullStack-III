@@ -10,4 +10,4 @@ spring:
     config:
       server:
         native:
-          search-locations: file:///C:/Users/fvera/Desktop/FullStack-III/config-repo
+          search-locations: file:///C:/Users/mayck/OneDrive/Desktop/FullStack-III/config-repo
