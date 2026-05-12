@@ -14,24 +14,38 @@ public class EstudianteService {
     @Autowired
     private EstudianteRepository estudianteRepository;
 
-    // Método para matricular (guardar) un estudiante
     public Estudiante registrarEstudiante(Estudiante estudiante) {
-        // Aquí en el futuro podrías agregar lógica para verificar si el RUT ya existe
         return estudianteRepository.save(estudiante);
     }
 
-    // Método para obtener todos los estudiantes del colegio
     public List<Estudiante> obtenerTodos() {
         return estudianteRepository.findAll();
     }
 
-    // Método para buscar a un estudiante por su ID
     public Optional<Estudiante> obtenerPorId(Long id) {
         return estudianteRepository.findById(id);
     }
 
-    // Método clave para la EV2: Buscar todos los alumnos de un curso (ej: 1ro Medio A)
     public List<Estudiante> obtenerPorCurso(Long cursoId) {
         return estudianteRepository.findByCursoId(cursoId);
+    }
+
+    // --- NUEVO: MÉTODO PARA ACTUALIZAR ---
+    public Estudiante actualizarEstudiante(Long id, Estudiante detallesEstudiante) {
+        return estudianteRepository.findById(id).map(estudianteExistente -> {
+            estudianteExistente.setRut(detallesEstudiante.getRut());
+            estudianteExistente.setNombres(detallesEstudiante.getNombres());
+            estudianteExistente.setApellidos(detallesEstudiante.getApellidos());
+            estudianteExistente.setEmail(detallesEstudiante.getEmail());
+            estudianteExistente.setFechaNacimiento(detallesEstudiante.getFechaNacimiento());
+            estudianteExistente.setCursoId(detallesEstudiante.getCursoId());
+            estudianteExistente.setEstado(detallesEstudiante.getEstado());
+            return estudianteRepository.save(estudianteExistente);
+        }).orElseThrow(() -> new RuntimeException("Estudiante no encontrado con el ID: " + id));
+    }
+
+    // --- NUEVO: MÉTODO PARA ELIMINAR ---
+    public void eliminarEstudiante(Long id) {
+        estudianteRepository.deleteById(id);
     }
 }

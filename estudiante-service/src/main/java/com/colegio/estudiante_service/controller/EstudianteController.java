@@ -45,7 +45,24 @@ public class EstudianteController {
     @Operation(summary = "Listar estudiantes por curso", description = "Devuelve la nómina de alumnos que pertenecen a un curso específico")
     @GetMapping("/curso/{cursoId}")
     public ResponseEntity<List<Estudiante>> listarPorCurso(@PathVariable Long cursoId) {
-        // CORREGIDO: Se llama a obtenerPorCurso() tal cual lo tienes en tu Service
         return ResponseEntity.ok(estudianteService.obtenerPorCurso(cursoId));
+    }
+
+    @Operation(summary = "Actualizar estudiante", description = "Modifica los datos de un alumno existente")
+    @PutMapping("/{id}")
+    public ResponseEntity<Estudiante> actualizarEstudiante(@PathVariable Long id, @Valid @RequestBody Estudiante detalles) {
+        try {
+            Estudiante actualizado = estudianteService.actualizarEstudiante(id, detalles);
+            return ResponseEntity.ok(actualizado);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @Operation(summary = "Eliminar estudiante", description = "Elimina a un alumno del sistema")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarEstudiante(@PathVariable Long id) {
+        estudianteService.eliminarEstudiante(id);
+        return ResponseEntity.noContent().build();
     }
 }
