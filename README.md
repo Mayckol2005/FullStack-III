@@ -12,3 +12,34 @@ La plataforma busca modernizar y centralizar los procesos académicos, administr
 - Martín Baza
 
 ---
+
+# 🎯 Objetivo del Proyecto
+
+Desarrollar una plataforma web integral basada en microservicios que permita gestionar:
+
+- información académica
+- matrículas
+- asistencia
+- evaluaciones
+- anotaciones
+- comunicaciones
+- reportes institucionales
+
+Todo esto mediante una arquitectura desacoplada, escalable y preparada para ambientes distribuidos.
+
+---
+
+# 🏗️ Arquitectura del Sistema
+
+El sistema fue diseñado utilizando una arquitectura basada en microservicios, implementando componentes especializados y desacoplados.
+
+## Componentes principales
+
+- API Gateway
+- Eureka Server
+- Config Server
+- Auth Service (JWT)
+- Backend For Frontend (BFF)
+- Microservicios funcionales independientes
+
+---
