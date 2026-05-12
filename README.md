@@ -13,7 +13,7 @@ La plataforma busca modernizar y centralizar los procesos académicos, administr
 
 ---
 
-# 🎯 Objetivo del Proyecto
+# Objetivo del Proyecto
 
 Desarrollar una plataforma web integral basada en microservicios que permita gestionar:
 
@@ -29,7 +29,7 @@ Todo esto mediante una arquitectura desacoplada, escalable y preparada para ambi
 
 ---
 
-# 🏗️ Arquitectura del Sistema
+# Arquitectura del Sistema
 
 El sistema fue diseñado utilizando una arquitectura basada en microservicios, implementando componentes especializados y desacoplados.
 
@@ -41,5 +41,30 @@ El sistema fue diseñado utilizando una arquitectura basada en microservicios, i
 - Auth Service (JWT)
 - Backend For Frontend (BFF)
 - Microservicios funcionales independientes
+
+---
+# Estructura del Proyecto
+
+```txt
+FULLSTACK-III/
+│
+├── academico-service
+├── anotacion-service
+├── api-gateway
+├── asistencia-service
+├── auth-service
+├── comunicacion-service
+├── config-repo
+├── config-server
+├── estudiante-service
+├── eureka-server
+├── evaluacion-service
+├── notificacion-service
+├── reporte-service
+├── usuario-service
+│
+├── docker-compose.yml
+└── README.md
+```
 
 ---
