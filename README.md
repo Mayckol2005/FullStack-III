@@ -68,3 +68,23 @@ FULLSTACK-III/
 ```
 
 ---
+
+# Microservicios Implementados
+
+| Microservicio | Responsabilidad |
+|---|---|
+| auth-service | Autenticación y generación de JWT |
+| usuario-service | Gestión de usuarios y roles |
+| estudiante-service | Gestión de estudiantes |
+| academico-service | Gestión académica |
+| evaluacion-service | Registro y cálculo de evaluaciones |
+| asistencia-service | Control de asistencia |
+| anotacion-service | Gestión de anotaciones |
+| comunicacion-service | Comunicaciones institucionales |
+| notificacion-service | Envío de notificaciones |
+| reporte-service | Backend For Frontend (BFF) |
+| api-gateway | Punto de entrada centralizado |
+| eureka-server | Service Discovery |
+| config-server | Configuración centralizada |
+
+---
