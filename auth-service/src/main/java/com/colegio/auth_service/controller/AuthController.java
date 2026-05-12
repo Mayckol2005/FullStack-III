@@ -49,7 +49,9 @@ public class AuthController {
 
                 // 3. Si coinciden, generamos el token con su ROL REAL
                 String token = jwtProvider.createToken(usuarioReal.getEmail(), usuarioReal.getRol());
-                return ResponseEntity.ok(new TokenDto(token));
+
+                // AQUÍ ESTÁ EL CAMBIO: Ahora enviamos el token Y EL ROL en la respuesta
+                return ResponseEntity.ok(new TokenDto(token, usuarioReal.getRol()));
 
             } else {
                 // Si la contraseña no coincide

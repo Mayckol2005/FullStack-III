@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="962bc15c-e2a0-4bb8-aee4-6fc05d0a80cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/AuthServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/dto/TokenDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/colegio/auth_service/dto/TokenDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/UsuarioServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/UsuarioServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/controller/UsuarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/com/colegio/usuario_service/service/UsuarioService.java" afterDir="false" />
     </list>
@@ -50,40 +47,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.academico-service [clean].executor": "Run",
-    "Maven.academico-service [package].executor": "Run",
-    "Maven.anotacion-service [clean].executor": "Run",
-    "Maven.anotacion-service [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.academico.executor": "Run",
-    "Spring Boot.anotacion.executor": "Run",
-    "Spring Boot.api.executor": "Run",
-    "Spring Boot.asistencia.executor": "Run",
-    "Spring Boot.auth.executor": "Run",
-    "Spring Boot.comunicacion.executor": "Run",
-    "Spring Boot.config-server.executor": "Run",
-    "Spring Boot.estudiante.executor": "Run",
-    "Spring Boot.evaluacion.executor": "Run",
-    "Spring Boot.notificacion.executor": "Run",
-    "Spring Boot.reporte.executor": "Run",
-    "Spring Boot.usuario.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "mayckol-mardones",
-    "kotlin-language-version-configured": "true",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.academico-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.academico-service [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.anotacion-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.anotacion-service [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.academico.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.anotacion.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.api.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.asistencia.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.auth.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.comunicacion.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.config-server.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.estudiante.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.evaluacion.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.notificacion.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.reporte.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.usuario.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mayckol-mardones&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -205,16 +202,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.config-server" />
-      <item itemvalue="Spring Boot.notificacion" />
       <item itemvalue="Spring Boot.academico" />
       <item itemvalue="Spring Boot.anotacion" />
       <item itemvalue="Spring Boot.api" />
       <item itemvalue="Spring Boot.asistencia" />
       <item itemvalue="Spring Boot.auth" />
       <item itemvalue="Spring Boot.comunicacion" />
+      <item itemvalue="Spring Boot.config-server" />
       <item itemvalue="Spring Boot.estudiante" />
       <item itemvalue="Spring Boot.evaluacion" />
+      <item itemvalue="Spring Boot.notificacion" />
       <item itemvalue="Spring Boot.reporte" />
       <item itemvalue="Spring Boot.usuario" />
     </list>
@@ -235,7 +232,12 @@
       <workItem from="1777931815488" duration="6886000" />
       <workItem from="1777991062847" duration="5846000" />
       <workItem from="1778012596400" duration="605000" />
-      <workItem from="1778014513098" duration="14083000" />
+      <workItem from="1778014513098" duration="14468000" />
+      <workItem from="1778085470782" duration="1760000" />
+      <workItem from="1778368690528" duration="7000" />
+      <workItem from="1778379321402" duration="319000" />
+      <workItem from="1778491228582" duration="2000" />
+      <workItem from="1778542753497" duration="9283000" />
     </task>
     <servers />
   </component>
