@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
 @Tag(name = "Seguridad y Accesos", description = "Endpoints para el inicio de sesión y generación de credenciales del colegio")
 public class AuthController {
 
@@ -54,16 +53,11 @@ public class AuthController {
                 return ResponseEntity.ok(new TokenDto(token, usuarioReal.getRol()));
 
             } else {
-                // Si la contraseña no coincide
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
             }
 
         } catch (Exception e) {
-            // Imprimimos el error real en los logs de Docker para no volar a ciegas
             e.printStackTrace();
-
-            // Si el usuario-service no encuentra el email (devuelve 404), Feign lanza una excepción.
-            // La atrapamos aquí y simplemente devolvemos un 401 Unauthorized por seguridad.
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }

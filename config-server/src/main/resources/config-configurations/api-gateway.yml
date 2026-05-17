@@ -27,43 +27,56 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials RETAIN_FIRST
+
       routes:
         - id: auth-service
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
+
         - id: usuario-service
           uri: lb://usuario-service
           predicates:
             - Path=/api/usuarios/**
+
         - id: academico-service
           uri: lb://academico-service
           predicates:
             - Path=/api/academico/**
+
         - id: comunicacion-service
           uri: lb://comunicacion-service
           predicates:
             - Path=/api/comunicaciones/**
+
         - id: estudiante-service
           uri: lb://estudiante-service
           predicates:
             - Path=/api/estudiantes/**
+
         - id: asistencia-service
           uri: lb://asistencia-service
           predicates:
             - Path=/api/asistencia/**
+
         - id: evaluacion-service
           uri: lb://evaluacion-service
           predicates:
             - Path=/api/evaluaciones/**
+
         - id: anotacion-service
           uri: lb://anotacion-service
           predicates:
             - Path=/api/anotaciones/**
+
         - id: notificacion-service
           uri: lb://notificacion-service
           predicates:
             - Path=/api/notificaciones/**
+
         - id: reporte-service
           uri: lb://reporte-service
           predicates:
