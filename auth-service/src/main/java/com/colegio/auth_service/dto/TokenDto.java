@@ -6,12 +6,21 @@ import io.swagger.v3.oas.annotations.media.Schema;
 public class TokenDto {
 
     private String token;
-    private String rol; // <-- AGREGAMOS ESTO
+    private String rol; 
+    private Long id;
 
-    // Actualizamos el constructor para que reciba ambos
-    public TokenDto(String token, String rol) {
+    public TokenDto(String token, String rol, Long id) {
         this.token = token;
         this.rol = rol;
+        this.id = id;
+    }
+
+    public Long getId() { 
+        return id; 
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     // Getters y Setters

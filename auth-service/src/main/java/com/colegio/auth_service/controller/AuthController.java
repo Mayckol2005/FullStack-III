@@ -50,7 +50,7 @@ public class AuthController {
                 String token = jwtProvider.createToken(usuarioReal.getEmail(), usuarioReal.getRol());
 
                 // 4. Enviamos el token Y EL ROL en la respuesta
-                return ResponseEntity.ok(new TokenDto(token, usuarioReal.getRol()));
+                return ResponseEntity.ok(new TokenDto(token, usuarioReal.getRol(), usuarioReal.getId()));
 
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

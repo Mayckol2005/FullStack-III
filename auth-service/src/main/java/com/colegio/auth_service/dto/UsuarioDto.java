@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UsuarioDto {
 
+    private Long id;
     private String email;
     private String password;
     private String rol;
@@ -15,6 +16,14 @@ public class UsuarioDto {
         this.email = email;
         this.password = password;
         this.rol = rol;
+    }
+
+    public Long getId() { 
+        return id; 
+    }
+    
+    public void setId(Long id) { 
+        this.id = id; 
     }
 
     public String getEmail() { return email; }
