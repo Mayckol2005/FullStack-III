@@ -13,6 +13,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controlador REST responsable de la autenticación centralizada de usuarios.
+ * Provee el endpoint para el inicio de sesión del ecosistema y delega la verificación 
+ * de contraseñas.
+ */
 @RestController
 @RequestMapping("/api/auth")
 @Tag(name = "Seguridad y Accesos", description = "Endpoints para el inicio de sesión")
@@ -27,6 +32,14 @@ public class AuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * Endpoint central para iniciar sesión en el portal.
+     * Consulta al usuario-service mediante Feign, verifica la contraseña hash con BCrypt 
+     * y genera un token JWT si el proceso es exitoso.
+     * @param authUserDto Objeto DTO que encapsula el email y la contraseña en texto plano.
+     * @return ResponseEntity con el TokenDto (token, rol, id y nombre) y código 200 (OK),
+     * o código HTTP 401 (UNAUTHORIZED) si las credenciales fallan.
+     */
     @Operation(summary = "Iniciar sesión")
     @PostMapping("/login")
     public ResponseEntity<TokenDto> login(@RequestBody AuthUserDto authUserDto) {

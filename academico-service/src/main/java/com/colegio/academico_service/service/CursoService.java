@@ -7,20 +7,38 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Servicio encargado de la gestión de cursos académicos dentro del establecimiento.
+ * Interactúa con CursoRepository para realizar las operaciones de persistencia.
+ */
 @Service
 public class CursoService {
 
     @Autowired
     private CursoRepository cursoRepository;
 
+    /**
+     * Obtiene una lista con todos los cursos registrados.
+     * @return Lista de objetos Curso.
+     */
     public List<Curso> listarTodos() {
         return cursoRepository.findAll();
     }
 
+    /**
+     * Guarda un nuevo curso en la base de datos.
+     * @param curso Objeto Curso con los datos a registrar.
+     * @return El curso guardado con su ID generado.
+     */
     public Curso guardar(Curso curso) {
         return cursoRepository.save(curso);
     }
 
+    /**
+     * Busca un curso específico por su identificador único.
+     * @param id Identificador del curso.
+     * @return El objeto Curso si existe, o null si no se encuentra.
+     */
     public Curso obtenerPorId(Long id) {
         return cursoRepository.findById(id).orElse(null);
     }

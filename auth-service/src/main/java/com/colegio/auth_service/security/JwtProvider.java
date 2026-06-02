@@ -9,6 +9,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Componente encargado de la generación, configuración y firma de tokens JWT (JSON Web Tokens).
+ * Utiliza algoritmos criptográficos HMAC SHA para asegurar la integridad de los datos de acceso.
+ */
 @Component
 public class JwtProvider {
 
@@ -18,6 +22,13 @@ public class JwtProvider {
     @Value("${jwt.expiration}")
     private int expiration;
 
+    /**
+     * Genera un token JWT compacto y firmado criptográficamente para un usuario autenticado.
+     * Añade los claims correspondientes al rol para la posterior autorización en el API Gateway.
+     * @param email Correo electrónico institucional del usuario (almacenado como Subject).
+     * @param rol Rol asignado en el sistema (ej. DOCENTE, ADMINISTRADOR) para control de accesos.
+     * @return Cadena de caracteres que representa el token JWT codificado.
+     */
     public String createToken(String email, String rol) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("rol", rol); // Guardamos el rol dentro del token

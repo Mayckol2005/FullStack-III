@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Servicio orquestador (patrón Backend For Frontend - BFF) que consolida información de diferentes microservicios.
+ * Se comunica con estudiante-service y evaluacion-service mediante Feign Clients para generar
+ * reportes y estadísticas globales de la institución.
+ */
 @Service
 public class ReporteService {
 
@@ -17,10 +22,16 @@ public class ReporteService {
     @Autowired
     private EvaluacionClient evaluacionClient;
 
+    /**
+     * Genera un reporte general del colegio consolidando datos de matrícula y calificaciones.
+     * Maneja excepciones de comunicación de forma controlada proporcionando estados y valores por defecto
+     * si algún microservicio dependiente no responde.
+     * @return Objeto ReporteGeneralDto con el total de estudiantes, el promedio general y el estado de la operación.
+     */
     public ReporteGeneralDto obtenerReporteGeneral() {
         int totalReal = 0;
         double promedioReal = 0.0;
-        String mensajeEstado = "Reporte BFF sincronizado con Estudiantes y Notas 🚀";
+        String mensajeEstado = "Reporte BFF sincronizado con Estudiantes y Notas \uD83D\uDE80";
 
         // 1. Llamar a Estudiantes
         try {
