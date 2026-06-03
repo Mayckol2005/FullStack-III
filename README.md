@@ -315,6 +315,17 @@ El proyecto implementa pruebas automatizadas utilizando JUnit 5 y Mockito para g
 
 ---
 
+# 🧪 Testing y Calidad de Software
+
+El proyecto implementa pruebas automatizadas para garantizar la estabilidad y confiabilidad de todo el ecosistema.
+
+## 📊 Cobertura de Código (Code Coverage)
+Se utilizó **JaCoCo** para el ecosistema de microservicios y **v8/Vitest** para la interfaz de usuario, superando el estándar mínimo del 90%:
+* **Backend (Microservicios):** 100% de cobertura global (Instructions, Branches, Lines, Methods).
+* **Frontend (React):** 96.24% de cobertura en líneas de código.
+
+---
+
 # 🌱 Estrategia de Branching
 
 Se implementó la metodología GitHub Flow con la siguiente estructura:

@@ -22,16 +22,17 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.disable())
                 .authorizeHttpRequests(auth -> auth
-                        // 1. Dejamos libre Swagger para la revisión del profe
+                        // Dejamos libre Swagger para la revisión del profe
                         .requestMatchers(
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
-                                "/swagger-ui.html"
+                                "/swagger-ui.html",
+                                "/api/usuarios/buscar-por-email"
                         ).permitAll()
-                        // 2. EXIGIMOS TOKEN para todo lo demás
+                        // EXIGIMOS TOKEN para todo lo demás
                         .anyRequest().authenticated()
                 )
-                // 3. Agregamos nuestro filtro validador de JWT antes del filtro de Spring
+                // Agregamos nuestro filtro validador de JWT antes del filtro de Spring
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
                 .httpBasic(httpBasic -> httpBasic.disable())
                 .formLogin(form -> form.disable());

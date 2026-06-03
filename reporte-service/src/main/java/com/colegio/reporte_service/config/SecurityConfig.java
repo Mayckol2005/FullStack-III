@@ -1,6 +1,6 @@
-package com.colegio.comunicacion_service.config;
+package com.colegio.reporte_service.config;
 
-import com.colegio.comunicacion_service.security.JwtTokenFilter;
+import com.colegio.reporte_service.security.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

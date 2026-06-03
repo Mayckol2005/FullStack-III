@@ -1,6 +1,6 @@
-package com.colegio.comunicacion_service.config;
+package com.colegio.estudiante_service.config;
 
-import com.colegio.comunicacion_service.security.JwtTokenFilter;
+import com.colegio.estudiante_service.security.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +20,13 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // Permitir Swagger para la documentación de la API
                         .requestMatchers(
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html"
                         ).permitAll()
+                        // Proteger todos los demás endpoints
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
