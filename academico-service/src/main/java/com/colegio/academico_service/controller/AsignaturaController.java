@@ -54,4 +54,34 @@ public class AsignaturaController {
     public ResponseEntity<Asignatura> crearAsignatura(@Valid @RequestBody Asignatura asignatura) {
         return ResponseEntity.status(HttpStatus.CREATED).body(asignaturaService.guardar(asignatura));
     }
+
+    /**
+     * Endpoint para modificar los datos de una asignatura.
+     * @param id ID de la asignatura a modificar.
+     * @param asignatura Objeto JSON con los datos nuevos.
+     * @return ResponseEntity con la asignatura actualizada (200 OK) o (404 Not Found).
+     */
+    @Operation(summary = "Actualizar asignatura", description = "Modifica los datos de una asignatura previamente registrada")
+    @PutMapping("/{id}")
+    public ResponseEntity<Asignatura> actualizarAsignatura(@PathVariable Long id, @Valid @RequestBody Asignatura asignatura) {
+        Asignatura actualizada = asignaturaService.actualizar(id, asignatura);
+        if (actualizada != null) {
+            return ResponseEntity.ok(actualizada);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    /**
+     * Endpoint para eliminar permanentemente una asignatura.
+     * @param id ID de la asignatura.
+     * @return ResponseEntity con (204 No Content) si es exitoso o (404 Not Found) si no existe.
+     */
+    @Operation(summary = "Eliminar asignatura", description = "Elimina de forma permanente una asignatura del catálogo")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarAsignatura(@PathVariable Long id) {
+        if (asignaturaService.eliminar(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Servicio encargado de la lógica de negocio relacionada con las asignaturas.
- * Define las operaciones para listar y guardar las materias impartidas.
+ * Define las operaciones para listar, guardar, editar y eliminar las materias impartidas.
  */
 @Service
 public class AsignaturaService {
@@ -40,5 +40,33 @@ public class AsignaturaService {
      */
     public List<Asignatura> listarPorCurso(Long cursoId) {
         return asignaturaRepository.findByCursoId(cursoId);
+    }
+
+    /**
+     * Actualiza los datos de una asignatura existente.
+     * @param id Identificador de la asignatura a modificar.
+     * @param detallesAsignatura Objeto con los nuevos datos.
+     * @return La asignatura actualizada, o null si no se encontró.
+     */
+    public Asignatura actualizar(Long id, Asignatura detallesAsignatura) {
+        return asignaturaRepository.findById(id).map(asignaturaExistente -> {
+            asignaturaExistente.setNombre(detallesAsignatura.getNombre());
+            asignaturaExistente.setCursoId(detallesAsignatura.getCursoId());
+            asignaturaExistente.setDocenteId(detallesAsignatura.getDocenteId());
+            return asignaturaRepository.save(asignaturaExistente);
+        }).orElse(null);
+    }
+
+    /**
+     * Elimina una asignatura del sistema.
+     * @param id Identificador de la asignatura a eliminar.
+     * @return true si se eliminó correctamente, false si no se encontró.
+     */
+    public boolean eliminar(Long id) {
+        if (asignaturaRepository.existsById(id)) {
+            asignaturaRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
