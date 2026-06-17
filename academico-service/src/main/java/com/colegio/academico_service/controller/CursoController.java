@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Controlador REST para la administración de los cursos académicos.
- * Expone los endpoints para consultar y registrar cursos en el sistema.
+ * Expone los endpoints para consultar y registrar cursos con validación estricta de duplicados.
  */
 @RestController
 @RequestMapping("/api/academico/cursos")
@@ -51,12 +51,25 @@ public class CursoController {
 
     /**
      * Endpoint para registrar un nuevo curso académico.
+     * Valida que no exista otro curso con el mismo grado, letra y nivel educativo.
      * @param curso Objeto JSON con los datos del curso validados.
-     * @return ResponseEntity con el curso creado y código HTTP 201 (CREATED).
+     * @return ResponseEntity con el curso creado (201) o un mensaje de error si está duplicado (409).
      */
-    @Operation(summary = "Crear un nuevo curso", description = "Registra un nuevo curso en la base de datos")
+    @Operation(summary = "Crear un nuevo curso", description = "Registra un nuevo curso verificando que no sea un duplicado")
     @PostMapping
-    public ResponseEntity<Curso> crearCurso(@Valid @RequestBody Curso curso) {
+    public ResponseEntity<?> crearCurso(@Valid @RequestBody Curso curso) {
+        // 🛡️ Validación en el Backend: Evita duplicados cruzando los datos entrantes con la lista existente
+        boolean yaExiste = cursoService.listarTodos().stream().anyMatch(c -> 
+            c.getGrado().equalsIgnoreCase(curso.getGrado()) &&
+            c.getLetra().equalsIgnoreCase(curso.getLetra()) &&
+            c.getNivel().equalsIgnoreCase(curso.getNivel())
+        );
+
+        if (yaExiste) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body("El curso " + curso.getGrado() + "° " + curso.getLetra() + " de nivel " + curso.getNivel() + " ya se encuentra registrado.");
+        }
+
         return ResponseEntity.status(HttpStatus.CREATED).body(cursoService.guardar(curso));
     }
 }

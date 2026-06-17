@@ -31,7 +31,8 @@ public class CursoControllerTest {
 
     @BeforeEach
     void setUp() {
-        cursoMock = new Curso();
+        // Inicializamos el mock con datos reales para evitar NullPointerException en los métodos de validación
+        cursoMock = new Curso("2do", "A", "Básica");
     }
 
     @Test
@@ -68,13 +69,32 @@ public class CursoControllerTest {
     }
 
     @Test
-    void testCrearCurso() {
+    void testCrearCurso_Exitoso() {
+        when(cursoService.listarTodos()).thenReturn(List.of());
         when(cursoService.guardar(any(Curso.class))).thenReturn(cursoMock);
 
-        ResponseEntity<Curso> response = cursoController.crearCurso(cursoMock);
+        ResponseEntity<?> response = cursoController.crearCurso(cursoMock);
 
         assertEquals(HttpStatus.CREATED.value(), response.getStatusCode().value());
         assertNotNull(response.getBody());
+        verify(cursoService, times(1)).listarTodos();
         verify(cursoService, times(1)).guardar(any(Curso.class));
+    }
+
+    @Test
+    void testCrearCurso_Duplicado() {
+        // Simulamos que ya existe un curso exactamente igual guardado en la base de datos
+        Curso cursoExistente = new Curso("2do", "A", "Básica");
+        when(cursoService.listarTodos()).thenReturn(List.of(cursoExistente));
+
+        // Ejecutamos la petición de creación
+        ResponseEntity<?> response = cursoController.crearCurso(cursoMock);
+
+        // Verificamos que lance un error 409 CONFLICT y retorne el mensaje de advertencia correcto
+        assertEquals(HttpStatus.CONFLICT.value(), response.getStatusCode().value());
+        assertEquals("El curso 2do° A de nivel Básica ya se encuentra registrado.", response.getBody());
+        
+        // 🛡️ Regla de oro: Verificamos que NUNCA se invoque al método guardar de la base de datos si el curso es repetido
+        verify(cursoService, never()).guardar(any(Curso.class));
     }
 }
