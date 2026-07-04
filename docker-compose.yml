@@ -110,9 +110,12 @@ services:
   comunicacion-service:
     build: ./comunicacion-service
     container_name: comunicacion-service
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
     depends_on:
       - mysql-db
       - eureka-server
+      - rabbitmq
     networks:
       - microservices-net
 
@@ -129,6 +132,23 @@ services:
     container_name: reporte-service
     depends_on:
       - eureka-server
+    networks:
+      - microservices-net
+
+  redis:
+    image: redis:alpine
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - microservices-net
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq-broker
+    ports:
+      - "5672:5672"   # Puerto de comunicación AMQP
+      - "15672:15672" # Panel gráfico de RabbitMQ (user: guest / pass: guest)
     networks:
       - microservices-net
 
