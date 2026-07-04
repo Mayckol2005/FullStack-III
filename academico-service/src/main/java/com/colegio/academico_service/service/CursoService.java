@@ -3,6 +3,8 @@ package com.colegio.academico_service.service;
 import com.colegio.academico_service.entity.Curso;
 import com.colegio.academico_service.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +23,7 @@ public class CursoService {
      * Obtiene una lista con todos los cursos registrados.
      * @return Lista de objetos Curso.
      */
+    @Cacheable(value = "cursos")
     public List<Curso> listarTodos() {
         return cursoRepository.findAll();
     }
@@ -30,6 +33,7 @@ public class CursoService {
      * @param curso Objeto Curso con los datos a registrar.
      * @return El curso guardado con su ID generado.
      */
+    @CacheEvict(value = "cursos", allEntries = true)
     public Curso guardar(Curso curso) {
         return cursoRepository.save(curso);
     }

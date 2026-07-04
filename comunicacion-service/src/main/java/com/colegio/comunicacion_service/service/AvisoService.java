@@ -2,6 +2,7 @@ package com.colegio.comunicacion_service.service;
 
 import com.colegio.comunicacion_service.entity.Aviso;
 import com.colegio.comunicacion_service.repository.AvisoRepository;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,9 @@ public class AvisoService {
     @Autowired
     private AvisoRepository avisoRepository;
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     /**
      * Obtiene una lista con todos los avisos institucionales publicados en el sistema.
      * @return Lista de objetos Aviso con la información del mural.
@@ -31,6 +35,13 @@ public class AvisoService {
      * @return El aviso guardado con su identificador único y fecha de publicación asignada.
      */
     public Aviso guardar(Aviso aviso) {
-        return avisoRepository.save(aviso);
+        // Guardamos primero en la base de datos relacional
+        Aviso avisoGuardado = avisoRepository.save(aviso);
+
+        // Dispara el evento asíncrono: Publicamos el título en la cola
+        String mensaje = "Nuevo aviso publicado: " + avisoGuardado.getTitulo();
+        rabbitTemplate.convertAndSend("notificaciones_queue", mensaje);
+
+        return avisoGuardado;
     }
 }

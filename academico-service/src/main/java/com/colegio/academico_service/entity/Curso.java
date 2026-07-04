@@ -3,11 +3,16 @@ package com.colegio.academico_service.entity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "cursos")
 @Schema(description = "Entidad que representa un curso académico dentro del colegio")
-public class Curso {
+// Implementamos Serializable para que Redis pueda guardarlo
+public class Curso implements Serializable {
+
+    // Buena práctica: agregamos el serialVersionUID.
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
