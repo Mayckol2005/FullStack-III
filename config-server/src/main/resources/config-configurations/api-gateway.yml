@@ -67,3 +67,28 @@ spring:
 
 jwt:
   secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    urls:
+      - name: Académico
+        url: /academico-service/v3/api-docs
+      - name: Anotación
+        url: /anotacion-service/v3/api-docs
+      - name: Asistencia
+        url: /asistencia-service/v3/api-docs
+      - name: Autenticación
+        url: /auth-service/v3/api-docs
+      - name: Comunicación
+        url: /comunicacion-service/v3/api-docs
+      - name: Estudiante
+        url: /estudiante-service/v3/api-docs
+      - name: Evaluación
+        url: /evaluacion-service/v3/api-docs
+      - name: Notificación
+        url: /notificacion-service/v3/api-docs
+      - name: Reporte
+        url: /reporte-service/v3/api-docs
+      - name: Usuario
+        url: /usuario-service/v3/api-docs
