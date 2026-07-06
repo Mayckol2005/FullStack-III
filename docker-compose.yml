@@ -9,6 +9,16 @@ services:
       - "3306:3306"
     networks:
       - microservices-net
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h localhost -u root --silent"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
 
   config-server:
     build: ./config-server
@@ -18,7 +28,13 @@ services:
     networks:
       - microservices-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      test:
+        [
+          "CMD",
+          "curl",
+          "-f",
+          "http://localhost:8888/actuator/health"
+        ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -33,14 +49,29 @@ services:
         condition: service_healthy
     networks:
       - microservices-net
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "-f",
+          "http://localhost:8761/actuator/health"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
 
   api-gateway:
     build: ./api-gateway
     container_name: api-gateway
+    environment:
+      - CONFIG_SERVER_IMPORT=configserver:http://config-server:8888
     ports:
       - "8080:8080" # Único punto de entrada público: centraliza y valida el tráfico aislando la red interna (Zero Trust).
     depends_on:
-      - eureka-server
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -48,8 +79,10 @@ services:
     build: ./auth-service
     container_name: auth-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -57,8 +90,10 @@ services:
     build: ./usuario-service
     container_name: usuario-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -66,8 +101,10 @@ services:
     build: ./academico-service
     container_name: academico-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -75,8 +112,10 @@ services:
     build: ./estudiante-service
     container_name: estudiante-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -84,8 +123,10 @@ services:
     build: ./asistencia-service
     container_name: asistencia-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -93,8 +134,10 @@ services:
     build: ./evaluacion-service
     container_name: evaluacion-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -102,8 +145,10 @@ services:
     build: ./anotacion-service
     container_name: anotacion-service
     depends_on:
-      - mysql-db
-      - eureka-server
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -113,9 +158,12 @@ services:
     environment:
       - SPRING_RABBITMQ_HOST=rabbitmq
     depends_on:
-      - mysql-db
-      - eureka-server
-      - rabbitmq
+      mysql-db:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
     networks:
       - microservices-net
 
@@ -123,7 +171,8 @@ services:
     build: ./notificacion-service
     container_name: notificacion-service
     depends_on:
-      - eureka-server
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
@@ -131,7 +180,8 @@ services:
     build: ./reporte-service
     container_name: reporte-service
     depends_on:
-      - eureka-server
+      eureka-server:
+        condition: service_healthy
     networks:
       - microservices-net
 
