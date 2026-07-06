@@ -4,13 +4,16 @@ import com.colegio.evaluacion_service.entity.Evaluacion;
 import com.colegio.evaluacion_service.repository.EvaluacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
- * Servicio encargado de la lógica de negocio para la gestión de calificaciones.
- * Procesa el registro de notas y realiza los cálculos matemáticos para los promedios.
+ * Servicio encargado de gestionar la lógica de negocio asociada
+ * al registro y consulta de calificaciones de los estudiantes.
+ * Permite administrar las evaluaciones N1, N2 y N3 de cada
+ * asignatura y calcular sus respectivos promedios.
  */
 @Service
 public class EvaluacionService {
@@ -19,58 +22,144 @@ public class EvaluacionService {
     private EvaluacionRepository evaluacionRepository;
 
     /**
-     * Obtiene el listado completo de todas las evaluaciones ingresadas en el colegio.
-     * @return Lista de objetos Evaluacion con las notas de todos los alumnos.
+     * Obtiene el listado completo de evaluaciones registradas
+     * en el establecimiento.
+     *
+     * @return Lista de todas las evaluaciones almacenadas.
      */
     public List<Evaluacion> listarTodas() {
         return evaluacionRepository.findAll();
     }
 
     /**
-     * Busca y retorna todas las calificaciones correspondientes a un estudiante específico.
-     * @param estudianteId Identificador único del alumno.
-     * @return Lista de evaluaciones filtrada por el ID del estudiante.
+     * Obtiene todas las evaluaciones asociadas a un estudiante.
+     *
+     * @param estudianteId Identificador único del estudiante.
+     * @return Lista de evaluaciones pertenecientes al estudiante.
      */
     public List<Evaluacion> listarPorEstudiante(Long estudianteId) {
         return evaluacionRepository.findByEstudianteId(estudianteId);
     }
 
     /**
-     * Registra una nueva calificación en el sistema.
-     * @param evaluacion Objeto Evaluacion con la nota, asignatura y estudiante asociado.
-     * @return La evaluación guardada en la base de datos con su identificador generado.
+     * Obtiene todas las evaluaciones registradas para una asignatura.
+     *
+     * @param asignaturaId Identificador único de la asignatura.
+     * @return Lista de evaluaciones pertenecientes a la asignatura.
      */
-    public Evaluacion guardar(Evaluacion evaluacion) {
-        return evaluacionRepository.save(evaluacion);
+    public List<Evaluacion> listarPorAsignatura(Long asignaturaId) {
+        return evaluacionRepository.findByAsignaturaId(asignaturaId);
     }
 
     /**
-     * Calcula el promedio aritmético de un estudiante en una asignatura específica.
-     * Filtra las notas del alumno por materia, realiza la sumatoria y redondea a un decimal.
-     * @param estudianteId Identificador único del alumno.
-     * @param asignatura Nombre de la materia (ej. "Matemáticas").
-     * @return El promedio calculado (ej. 5.5). Retorna 0.0 si el estudiante no tiene notas registradas en dicha materia.
+     * Obtiene las evaluaciones de un estudiante correspondientes
+     * a una asignatura específica.
+     *
+     * @param estudianteId Identificador único del estudiante.
+     * @param asignaturaId Identificador único de la asignatura.
+     * @return Lista de evaluaciones del estudiante en la asignatura indicada.
      */
-    public Double calcularPromedioAsignatura(Long estudianteId, String asignatura) {
-        List<Evaluacion> notas = evaluacionRepository.findByEstudianteId(estudianteId)
-                .stream()
-                .filter(e -> e.getAsignatura().equalsIgnoreCase(asignatura))
-                .collect(Collectors.toList());
+    public List<Evaluacion> listarPorEstudianteYAsignatura(
+            Long estudianteId,
+            Long asignaturaId
+    ) {
+        return evaluacionRepository
+                .findByEstudianteIdAndAsignaturaId(
+                        estudianteId,
+                        asignaturaId
+                );
+    }
 
-        // Si no tiene notas, devolvemos 0.0
-        if (notas.isEmpty()) {
+    /**
+     * Registra o actualiza una evaluación de un estudiante.
+     * La evaluación es identificada de forma lógica mediante el estudiante,
+     * la asignatura y el número de evaluación N1, N2 o N3.
+     * Si el registro ya existe, se actualizan la nota y la fecha.
+     * En caso contrario, se crea una nueva evaluación.
+     *
+     * @param evaluacion Evaluación que contiene estudiante, asignatura,
+     *                   número de evaluación, nota y fecha.
+     * @return Evaluación creada o actualizada.
+     */
+    @Transactional
+    public Evaluacion guardar(Evaluacion evaluacion) {
+        LocalDate fechaRegistro = evaluacion.getFecha() != null
+                ? evaluacion.getFecha()
+                : LocalDate.now();
+
+        evaluacion.setFecha(fechaRegistro);
+
+        return evaluacionRepository
+                .findByEstudianteIdAndAsignaturaIdAndNumeroEvaluacion(
+                        evaluacion.getEstudianteId(),
+                        evaluacion.getAsignaturaId(),
+                        evaluacion.getNumeroEvaluacion()
+                )
+                .map(evaluacionExistente -> {
+                    evaluacionExistente.setNota(
+                            evaluacion.getNota()
+                    );
+
+                    evaluacionExistente.setFecha(
+                            fechaRegistro
+                    );
+
+                    return evaluacionRepository.save(
+                            evaluacionExistente
+                    );
+                })
+                .orElseGet(
+                        () -> evaluacionRepository.save(evaluacion)
+                );
+    }
+
+    /**
+     * Registra o actualiza una lista de evaluaciones.
+     * Cada registro es procesado individualmente para determinar
+     * si corresponde crear una evaluación o actualizar una existente.
+     *
+     * @param evaluaciones Lista de evaluaciones a sincronizar.
+     * @return Lista de evaluaciones creadas o actualizadas.
+     */
+    @Transactional
+    public List<Evaluacion> guardarLista(
+            List<Evaluacion> evaluaciones
+    ) {
+        return evaluaciones.stream()
+                .map(this::guardar)
+                .toList();
+    }
+
+    /**
+     * Calcula el promedio aritmético de las evaluaciones registradas
+     * para un estudiante dentro de una asignatura.
+     * El resultado es redondeado a un decimal.
+     *
+     * @param estudianteId Identificador único del estudiante.
+     * @param asignaturaId Identificador único de la asignatura.
+     * @return Promedio de las calificaciones o 0.0 cuando no existen notas.
+     */
+    public Double calcularPromedioAsignatura(
+            Long estudianteId,
+            Long asignaturaId
+    ) {
+        List<Evaluacion> evaluaciones =
+                evaluacionRepository
+                        .findByEstudianteIdAndAsignaturaId(
+                                estudianteId,
+                                asignaturaId
+                        );
+
+        if (evaluaciones.isEmpty()) {
             return 0.0;
         }
 
-        double sumaNotas = 0.0;
+        double sumaNotas = evaluaciones.stream()
+                .mapToDouble(Evaluacion::getNota)
+                .sum();
 
-        for (Evaluacion e : notas) {
-            sumaNotas += e.getNota();
-        }
+        double promedio = sumaNotas / evaluaciones.size();
 
-        double promedioFinal = sumaNotas / notas.size();
-
-        // Redondeamos a un decimal (ej: 5.46 -> 5.5)
-        return Math.round(promedioFinal * 10.0) / 10.0;
+        return Math.round(promedio * 10.0) / 10.0;
     }
 }
