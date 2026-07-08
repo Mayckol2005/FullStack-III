@@ -26,9 +26,10 @@ public class SecurityConfig {
                                 "/swagger-ui/**",
                                 "/swagger-ui.html"
                         ).permitAll()
-                        
+
                         .requestMatchers(HttpMethod.POST, "/api/comunicaciones", "/api/comunicaciones/**").hasAuthority("ADMINISTRADOR")
-                        
+                        .requestMatchers(HttpMethod.DELETE, "/api/comunicaciones", "/api/comunicaciones/**").hasAuthority("ADMINISTRADOR")
+
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)

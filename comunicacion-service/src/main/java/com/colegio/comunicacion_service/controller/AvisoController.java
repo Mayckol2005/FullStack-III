@@ -44,4 +44,11 @@ public class AvisoController {
     public ResponseEntity<Aviso> crearAviso(@Valid @RequestBody Aviso aviso) {
         return ResponseEntity.status(HttpStatus.CREATED).body(avisoService.guardar(aviso));
     }
+
+    @Operation(summary = "Eliminar aviso", description = "Elimina un comunicado institucional por su identificador")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarAviso(@PathVariable Long id) {
+        avisoService.eliminar(id);
+        return ResponseEntity.noContent().build();
+    }
 }

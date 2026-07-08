@@ -43,6 +43,10 @@ public class AsistenciaService {
         return asistenciaRepository.findByCursoIdAndFecha(cursoId, fecha);
     }
 
+    public List<Asistencia> listarPorEstudiante(Long estudianteId) {
+        return asistenciaRepository.findByEstudianteId(estudianteId);
+    }
+
     /**
      * Registra o actualiza la asistencia diaria de un estudiante.
      * Si el estudiante ya posee un registro para la fecha indicada,

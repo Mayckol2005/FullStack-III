@@ -2,6 +2,7 @@ package com.colegio.usuario_service.exception;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -44,5 +45,23 @@ public class GlobalExceptionHandlerTest {
         assertNotNull(errores);
         assertEquals(1, errores.size());
         assertEquals("El correo es obligatorio", errores.get("email"));
+    }
+
+    @Test
+    void testHandleDataIntegrityViolation() {
+        ResponseEntity<Map<String, String>> response =
+                exceptionHandler.handleDataIntegrityViolation(
+                        new DataIntegrityViolationException("duplicado")
+                );
+
+        assertNotNull(response);
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+
+        Map<String, String> error = response.getBody();
+        assertNotNull(error);
+        assertEquals(
+                "Ya existe un usuario con ese RUT o correo electrónico.",
+                error.get("mensaje")
+        );
     }
 }

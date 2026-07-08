@@ -44,4 +44,8 @@ public class AvisoService {
 
         return avisoGuardado;
     }
+
+    public void eliminar(Long id) {
+        avisoRepository.deleteById(id);
+    }
 }

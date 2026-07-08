@@ -44,6 +44,10 @@ public class EstudianteService {
         return estudianteRepository.findById(id);
     }
 
+    public Optional<Estudiante> obtenerPorEmail(String email) {
+        return estudianteRepository.findByEmail(email);
+    }
+
     /**
      * Obtiene todos los estudiantes asociados a un curso específico.
      * @param cursoId Identificador del curso.
