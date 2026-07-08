@@ -47,6 +47,14 @@ public class EstudianteController {
         return ResponseEntity.ok(estudianteService.obtenerTodos());
     }
 
+    @Operation(summary = "Obtener estudiante por Email", description = "Busca los datos de un alumno mediante su correo institucional")
+    @GetMapping("/buscar-por-email")
+    public ResponseEntity<Estudiante> buscarPorEmail(@RequestParam("email") String email) {
+        return estudianteService.obtenerPorEmail(email)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     /**
      * Endpoint para buscar un estudiante específico por su ID.
      * @param id Identificador único del estudiante en la ruta.

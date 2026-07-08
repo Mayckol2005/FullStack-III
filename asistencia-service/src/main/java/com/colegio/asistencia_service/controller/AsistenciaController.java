@@ -68,6 +68,19 @@ public class AsistenciaController {
         );
     }
 
+    @Operation(
+            summary = "Consultar asistencia por estudiante",
+            description = "Obtiene los registros de asistencia de un estudiante"
+    )
+    @GetMapping("/estudiante/{estudianteId}")
+    public ResponseEntity<List<Asistencia>> listarPorEstudiante(
+            @PathVariable Long estudianteId
+    ) {
+        return ResponseEntity.ok(
+                asistenciaService.listarPorEstudiante(estudianteId)
+        );
+    }
+
     /**
      * Endpoint para registrar o actualizar el estado de asistencia de un estudiante.
      *
